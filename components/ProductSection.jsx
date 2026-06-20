@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { products } from "../app/data/products";
 
 export default function ProductListing({
@@ -38,21 +39,21 @@ export default function ProductListing({
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-xl p-3 flex flex-col justify-between shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full"
+              className="bg-white rounded-xl p-3 flex flex-col justify-between shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 h-full"
             >
-              {/* Image (cover) */}
-              <div className="h-32 w-full overflow-hidden rounded-lg mb-2.5 bg-gray-50 flex items-center justify-center">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <Link href={`/product/${product.id}`} className="flex flex-col flex-1 group cursor-pointer">
+                {/* Image (cover) */}
+                <div className="h-32 w-full overflow-hidden rounded-lg mb-2.5 bg-gray-50 flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
 
-              {/* Product Info */}
-              <div className="flex flex-col gap-1 flex-1 justify-between">
-                <div>
-                  <h3 className="text-xs font-semibold text-[#1a202c] line-clamp-1">
+                {/* Product Info */}
+                <div className="flex flex-col gap-1 flex-1">
+                  <h3 className="text-xs font-semibold text-[#1a202c] line-clamp-1 group-hover:text-[#005ec4] transition-colors duration-200">
                     {product.title}
                   </h3>
                   
@@ -68,7 +69,7 @@ export default function ProductListing({
                         }
                       >
                         ★
-                    </span>
+                      </span>
                     ))}
                     <span className="text-gray-400 ml-1 text-[9px]">({product.rating})</span>
                   </div>
@@ -77,12 +78,18 @@ export default function ProductListing({
                     ${product.price}
                   </p>
                 </div>
+              </Link>
 
-                {/* Quick "Add to Cart" button */}
-                <button className="w-full bg-[#005ec4] hover:bg-[#004ca1] text-white font-medium text-[11px] py-1.5 rounded-md mt-2 transition-colors">
-                  Add to Cart
-                </button>
-              </div>
+              {/* Quick "Add to Cart" button */}
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
+                className="w-full bg-[#005ec4] hover:bg-[#004ca1] text-white font-medium text-[11px] py-1.5 rounded-md mt-2 transition-colors duration-200 cursor-pointer"
+              >
+                Add to Cart
+              </button>
             </div>
           ))}
         </div>

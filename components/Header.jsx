@@ -1,11 +1,16 @@
 import { Search, ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 export default function Header({ searchQuery, setSearchQuery }) {
   return (
     <header className="bg-[#0759A9] px-8 py-4">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
         {/* Logo */}
-        <h1 className="text-4xl font-bold text-white">Logo</h1>
+        <Link href="/">
+          <h1 className="text-4xl font-bold text-white cursor-pointer hover:opacity-90 transition-opacity">
+            Logo
+          </h1>
+        </Link>
 
         {/* Search */}
         <div className="relative flex-1 max-w-md">
