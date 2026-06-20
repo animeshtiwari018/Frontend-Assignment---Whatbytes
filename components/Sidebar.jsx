@@ -22,7 +22,7 @@ const SidebarFilters = () => {
   };
 
   return (
-    <div className="w-full md:max-w-[220px] h-auto self-start bg-[#0052a3] text-white py-6 px-4 rounded-xl font-sans select-none box-border shadow-md">
+    <div className="w-full md:max-w-[220px] md:mt-8 h-auto self-start bg-[#0052a3] text-white py-6 px-4 rounded-xl font-sans select-none box-border shadow-md">
       <div>
         {/* Main Title */}
         <h2 className="text-lg font-semibold mb-4 tracking-wide text-white">
