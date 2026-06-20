@@ -1,6 +1,6 @@
 import { Search, ShoppingCart } from "lucide-react";
 
-export default function Header() {
+export default function Header({ searchQuery, setSearchQuery }) {
   return (
     <header className="bg-[#0759A9] px-8 py-4">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
@@ -17,12 +17,13 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search for products..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full rounded-lg border border-blue-400 bg-transparent py-3 pl-10 pr-4 text-white placeholder:text-gray-300 outline-none"
           />
         </div>
 
         {/* Cart */}
-
         <button className="flex items-center gap-2 rounded-lg bg-[#002b5a] px-5 py-3 text-white">
           <ShoppingCart size={18} />
           Cart
