@@ -1,63 +1,5 @@
 import React from "react";
-
-const products = [
-  {
-    id: 1,
-    name: "Running Shoes",
-    price: 99,
-    rating: 4.5,
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&auto=format&fit=crop&q=80",
-  },
-  {
-    id: 2,
-    name: "Wireless Headphones",
-    price: 99,
-    rating: 4.2,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop&q=80",
-  },
-  {
-    id: 3,
-    name: "Backpack",
-    price: 129,
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&auto=format&fit=crop&q=80",
-  },
-  {
-    id: 4,
-    name: "Smartwatch",
-    price: 249,
-    rating: 4.3,
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop&q=80",
-  },
-  {
-    id: 5,
-    name: "Sunglasses",
-    price: 149,
-    rating: 4.0,
-    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&auto=format&fit=crop&q=80",
-  },
-  {
-    id: 6,
-    name: "Digital Camera",
-    price: 499,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&auto=format&fit=crop&q=80",
-  },
-  {
-    id: 7,
-    name: "T-shirt",
-    price: 29,
-    rating: 3.9,
-    image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&auto=format&fit=crop&q=80",
-  },
-  {
-    id: 8,
-    name: "Smartphone",
-    price: 699,
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&auto=format&fit=crop&q=80",
-  },
-];
+import { products } from "../app/data/products";
 
 export default function ProductListing() {
   return (
@@ -78,7 +20,7 @@ export default function ProductListing() {
             <div className="h-32 w-full overflow-hidden rounded-lg mb-2.5 bg-gray-50 flex items-center justify-center">
               <img
                 src={product.image}
-                alt={product.name}
+                alt={product.title}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -87,7 +29,7 @@ export default function ProductListing() {
             <div className="flex flex-col gap-1 flex-1 justify-between">
               <div>
                 <h3 className="text-xs font-semibold text-[#1a202c] line-clamp-1">
-                  {product.name}
+                  {product.title}
                 </h3>
                 
                 {/* Rating stars */}

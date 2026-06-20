@@ -1,0 +1,133 @@
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  category: string;
+  brand: string;
+  rating: number;
+  description: string;
+}
+
+export const products: Product[] = [
+  {
+    id: 1,
+    title: "Nike Air Max Runner",
+    price: 129,
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&auto=format&fit=crop&q=80",
+    category: "Footwear",
+    brand: "Nike",
+    rating: 4.5,
+    description: "Experience maximum comfort and responsiveness with Nike's signature air cushioning technology, designed for daily runners.",
+  },
+  {
+    id: 2,
+    title: "Wireless ANC Headphones",
+    price: 199,
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop&q=80",
+    category: "Electronics",
+    brand: "Sony",
+    rating: 4.6,
+    description: "Immerse yourself in rich, high-fidelity sound with state-of-the-art active noise cancelling and up to 40 hours of battery life.",
+  },
+  {
+    id: 3,
+    title: "Classic Leather Backpack",
+    price: 89,
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&auto=format&fit=crop&q=80",
+    category: "Clothing",
+    brand: "Adidas",
+    rating: 4.2,
+    description: "A durable and stylish everyday carry backpack, crafted from full-grain leather with dedicated compartments for your laptop and gear.",
+  },
+  {
+    id: 4,
+    title: "Series 9 Smartwatch",
+    price: 399,
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop&q=80",
+    category: "Electronics",
+    brand: "Apple",
+    rating: 4.7,
+    description: "Track your workouts, check your notifications, and monitor your health metrics with the sleek and always-on Retina display.",
+  },
+  {
+    id: 5,
+    title: "Classic Aviator Sunglasses",
+    price: 149,
+    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&auto=format&fit=crop&q=80",
+    category: "Clothing",
+    brand: "Ray-Ban",
+    rating: 4.0,
+    description: "Timeless aviator styling paired with polarized protective lenses for crystal-clear outdoor vision and 100% UV protection.",
+  },
+  {
+    id: 6,
+    title: "Mirrorless Digital Camera",
+    price: 899,
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&auto=format&fit=crop&q=80",
+    category: "Electronics",
+    brand: "Fujifilm",
+    rating: 4.8,
+    description: "Capture stunning detail and cinematic 4K video with this lightweight mirrorless camera featuring advanced autofocus.",
+  },
+  {
+    id: 7,
+    title: "Premium Cotton T-shirt",
+    price: 29,
+    image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&auto=format&fit=crop&q=80",
+    category: "Clothing",
+    brand: "Nike",
+    rating: 4.1,
+    description: "Made from ultra-soft, breathable organic cotton, offering a relaxed fit that keeps its shape wash after wash.",
+  },
+  {
+    id: 8,
+    title: "iPhone 15 Pro",
+    price: 999,
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&auto=format&fit=crop&q=80",
+    category: "Electronics",
+    brand: "Apple",
+    rating: 4.9,
+    description: "Featuring a titanium design, advanced camera system, and the powerful A17 Pro chip for next-level gaming and performance.",
+  },
+  {
+    id: 9,
+    title: "Suede Court Sneakers",
+    price: 79,
+    image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&auto=format&fit=crop&q=80",
+    category: "Footwear",
+    brand: "Puma",
+    rating: 4.3,
+    description: "Classic court sneaker silhouette with a soft suede upper and cushioned footbed for effortless daily comfort.",
+  },
+  {
+    id: 10,
+    title: "Sherpa Denim Jacket",
+    price: 119,
+    image: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=400&auto=format&fit=crop&q=80",
+    category: "Clothing",
+    brand: "Levi's",
+    rating: 4.4,
+    description: "Classic trucker style jacket featuring warm sherpa lining, button closure, and durable heavyweight denim.",
+  },
+  {
+    id: 11,
+    title: "Pure Cool Air Purifier",
+    price: 499,
+    image: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=400&auto=format&fit=crop&q=80",
+    category: "Home",
+    brand: "Dyson",
+    rating: 4.6,
+    description: "Intelligently purifies and cools the room, capturing 99.97% of allergens and pollutants as small as 0.3 microns.",
+  },
+  {
+    id: 12,
+    title: "Vertuo Coffee & Espresso Maker",
+    price: 179,
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&auto=format&fit=crop&q=80",
+    category: "Home",
+    brand: "Nespresso",
+    rating: 4.5,
+    description: "Brew single-serve barista-quality coffee or authentic espresso at the touch of a single button with rich crema.",
+  },
+];
