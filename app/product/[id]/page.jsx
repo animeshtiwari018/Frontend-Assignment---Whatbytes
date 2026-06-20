@@ -4,6 +4,7 @@ import React, { useState, use } from "react";
 import Link from "next/link";
 import { ArrowLeft, ShoppingCart, Star, Plus, Minus, Check, ArrowRight } from "lucide-react";
 import { products } from "../../data/products";
+import { useCart } from "../../../context/CartContext";
 
 // Sample reviews generator based on product rating
 const getMockReviews = (rating) => [
@@ -39,6 +40,7 @@ export default function ProductDetailPage({ params }) {
   const productId = parseInt(resolvedParams.id, 10);
   const product = products.find((p) => p.id === productId);
 
+  const { addToCart, cartItems, setIsCartOpen } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
@@ -59,7 +61,7 @@ export default function ProductDetailPage({ params }) {
           <div className="bg-white p-8 md:p-12 rounded-2xl shadow-md border border-gray-100 max-w-md w-full">
             <h2 className="text-[#0a3161] text-2xl font-bold mb-4">Product Not Found</h2>
             <p className="text-gray-500 mb-6">
-              We couldn't find the product you were looking for. It may have been removed or the link is incorrect.
+              We couldn&apos;t find the product you were looking for. It may have been removed or the link is incorrect.
             </p>
             <Link
               href="/"
@@ -87,6 +89,7 @@ export default function ProductDetailPage({ params }) {
   };
 
   const handleAddToCart = () => {
+    addToCart(product, quantity);
     setAddedToCart(true);
     setTimeout(() => {
       setAddedToCart(false);
@@ -111,12 +114,13 @@ export default function ProductDetailPage({ params }) {
             </h1>
           </Link>
 
-          <Link href="/">
-            <button className="flex items-center gap-2 rounded-lg bg-[#002b5a] px-5 py-3 text-white hover:bg-[#001e3f] transition-colors cursor-pointer">
-              <ShoppingCart size={18} />
-              Cart
-            </button>
-          </Link>
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="flex items-center gap-2 rounded-lg bg-[#002b5a] px-5 py-3 text-white hover:bg-[#001e3f] transition-colors cursor-pointer"
+          >
+            <ShoppingCart size={18} />
+            Cart ({cartItems.reduce((acc, item) => acc + item.quantity, 0)})
+          </button>
         </div>
       </header>
 

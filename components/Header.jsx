@@ -1,7 +1,13 @@
+"use client";
+
 import { Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
+import { useCart } from "../context/CartContext";
 
 export default function Header({ searchQuery, setSearchQuery }) {
+  const { cartItems, setIsCartOpen } = useCart();
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <header className="bg-[#0759A9] px-8 py-4">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
@@ -29,9 +35,12 @@ export default function Header({ searchQuery, setSearchQuery }) {
         </div>
 
         {/* Cart */}
-        <button className="flex items-center gap-2 rounded-lg bg-[#002b5a] px-5 py-3 text-white">
+        <button
+          onClick={() => setIsCartOpen(true)}
+          className="flex items-center gap-2 rounded-lg bg-[#002b5a] px-5 py-3 text-white hover:bg-[#001e3f] transition-colors cursor-pointer"
+        >
           <ShoppingCart size={18} />
-          Cart
+          Cart ({totalItems})
         </button>
       </div>
     </header>

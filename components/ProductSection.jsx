@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { products } from "../app/data/products";
+import { useCart } from "../context/CartContext";
 
 export default function ProductListing({
   searchQuery = "",
@@ -8,6 +9,8 @@ export default function ProductListing({
   minPrice = 0,
   maxPrice = 1000,
 }) {
+  const { addToCart } = useCart();
+
   // Filter products by title (case-insensitive), selected categories, and price range
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -85,6 +88,7 @@ export default function ProductListing({
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
+                  addToCart(product, 1);
                 }}
                 className="w-full bg-[#005ec4] hover:bg-[#004ca1] text-white font-medium text-[11px] py-1.5 rounded-md mt-2 transition-colors duration-200 cursor-pointer"
               >
