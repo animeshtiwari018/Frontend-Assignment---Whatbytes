@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Whatbytes Store - Frontend E-Commerce Catalog
 
-## Getting Started
+A modern, responsive, and highly interactive frontend e-commerce catalog built using **Next.js 15+ (App Router)**, **React**, **Tailwind CSS**, and **Lucide React**. This project is fully responsive, features a global state management system for the shopping cart, and provides real-time client-side searching and filtering.
 
-First, run the development server:
+## 🔗 Project Links
 
+*   **GitHub Repository:** [https://github.com/animeshtiwari018/Frontend-Assignment---Whatbytes](https://github.com/animeshtiwari018/Frontend-Assignment---Whatbytes)
+*   **Live Deployment URL:** [https://frontend-assignment-whatbytes-animesh.vercel.app/](https://frontend-assignment-whatbytes-animesh.vercel.app/) *(If your Vercel deployment URL is different, feel free to update this link in the README)*
+
+---
+
+## 🚀 Key Features
+
+*   **Global Cart State (React Context):** Implemented a unified cart state using `CartProvider` and the custom hook `useCart()`. Cart data is preserved across page refreshes using browser `localStorage` integration.
+*   **Dual-Range Price Filtering:** Dynamic, interactive price filters allowing users to filter products in real-time between `$0` and `$1000`.
+*   **Multi-Category Selection:** Checkbox filters for categories (Electronics, Clothing, Home, Footwear) that update the product grid instantly.
+*   **Real-time Title Search:** A search bar in the header allowing users to filter down items instantly by keywords.
+*   **Side-Drawer Cart View:** A slide-out cart listing all items, quantities, subtotal calculations, estimated delivery shipping thresholds (free shipping for orders over $100), and a one-click checkout simulation.
+*   **Dynamic Product Details Page:** Custom dynamic routes `product/[id]` with stock badges, alternate thumbnail showcase, review lists, and detailed product breakdown.
+*   **Responsive layouts:** Mobile-optimized, touch-friendly UI using CSS Flexbox/Grid, and Tailwind CSS.
+
+---
+
+## 🛠️ Tech Stack
+
+*   **Framework:** Next.js 15+ (App Router)
+*   **Styling:** Tailwind CSS
+*   **Icons:** Lucide React
+*   **State Management:** React Context API
+*   **Storage:** HTML5 LocalStorage API
+
+---
+
+## 💻 Setup Instructions
+
+Follow these instructions to run the project locally on your machine:
+
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) (v18.x or higher recommended) and `npm` installed.
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/animeshtiwari018/Frontend-Assignment---Whatbytes.git
+cd "Frontend-Assignment---Whatbytes"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Enter the Next.js app directory
+```bash
+cd frontend-assignment-whatbytes
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Install dependencies
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Run the development server
+```bash
+npm run dev
+```
 
-## Learn More
+### 5. View in browser
+Open [http://localhost:3000](http://localhost:3000) in your web browser to view the application.
 
-To learn more about Next.js, take a look at the following resources:
+### 6. Build for Production
+To generate a production-optimized build:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Deploying to Vercel
 
-## Deploy on Vercel
+To deploy this project to Vercel:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  Push the code to your GitHub repository.
+2.  Go to [Vercel](https://vercel.com/) and log in.
+3.  Click **New Project** and import the `Frontend-Assignment---Whatbytes` repository.
+4.  Specify `frontend-assignment-whatbytes` as the **Root Directory** in Vercel's build settings.
+5.  Click **Deploy**. Vercel will automatically configure the build commands and generate your live URL.
