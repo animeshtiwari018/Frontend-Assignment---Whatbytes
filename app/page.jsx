@@ -8,6 +8,8 @@ import ProductSection from "../components/ProductSection";
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(1000);
 
   return (
     <>
@@ -17,12 +19,18 @@ export default function Home() {
         <Sidebar
           selectedCategories={selectedCategories}
           setSelectedCategories={setSelectedCategories}
+          minPrice={minPrice}
+          setMinPrice={setMinPrice}
+          maxPrice={maxPrice}
+          setMaxPrice={setMaxPrice}
         />
 
         <div className="flex-1">
           <ProductSection
             searchQuery={searchQuery}
             selectedCategories={selectedCategories}
+            minPrice={minPrice}
+            maxPrice={maxPrice}
           />
         </div>
       </main>

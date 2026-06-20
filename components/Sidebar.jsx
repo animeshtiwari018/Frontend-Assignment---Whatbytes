@@ -2,10 +2,14 @@
 
 import React, { useState } from "react";
 
-const SidebarFilters = ({ selectedCategories = [], setSelectedCategories }) => {
-  // Minimum and Maximum price states
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1000);
+const SidebarFilters = ({
+  selectedCategories = [],
+  setSelectedCategories,
+  minPrice = 0,
+  setMinPrice = () => {},
+  maxPrice = 1000,
+  setMaxPrice = () => {},
+}) => {
 
   const categories = ["Electronics", "Clothing", "Home", "Footwear"];
 

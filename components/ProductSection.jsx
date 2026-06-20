@@ -1,12 +1,18 @@
 import React from "react";
 import { products } from "../app/data/products";
 
-export default function ProductListing({ searchQuery = "", selectedCategories = [] }) {
-  // Filter products by title (case-insensitive) and selected categories
+export default function ProductListing({
+  searchQuery = "",
+  selectedCategories = [],
+  minPrice = 0,
+  maxPrice = 1000,
+}) {
+  // Filter products by title (case-insensitive), selected categories, and price range
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
-    return matchesSearch && matchesCategory;
+    const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
+    return matchesSearch && matchesCategory && matchesPrice;
   });
 
   return (
