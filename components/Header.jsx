@@ -2,7 +2,11 @@ import { Search, ShoppingCart } from "lucide-react";
 
 export default function Header() {
   return (
+<<<<<<< HEAD
     <header className="bg-[#0759A9] px-8 py-5">
+=======
+    <header className="bg-[#0759A9] px-8 py-4">
+>>>>>>> 459f4e0dcb9f894ef91cd9a9fa77922acb3fde07
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
         {/* Logo */}
         <h1 className="text-4xl font-bold text-white">Logo</h1>
@@ -22,7 +26,11 @@ export default function Header() {
         </div>
 
         {/* Cart */}
+<<<<<<< HEAD
         <button className="flex items-center gap-2 rounded-lg bg-[#002b5a] px-8 py-3 text-white">
+=======
+        <button className="flex items-center gap-2 rounded-lg bg-[#002b5a] px-5 py-3 text-white">
+>>>>>>> 459f4e0dcb9f894ef91cd9a9fa77922acb3fde07
           <ShoppingCart size={18} />
           Cart
         </button>
