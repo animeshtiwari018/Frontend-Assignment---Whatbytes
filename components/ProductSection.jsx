@@ -9,7 +9,7 @@ export default function ProductListing({
   minPrice = 0,
   maxPrice = 1000,
 }) {
-  const { addToCart } = useCart();
+  const { addToCart, isLoaded } = useCart();
 
   // Filter products by title (case-insensitive), selected categories, and price range
   const filteredProducts = products.filter((product) => {
@@ -18,6 +18,39 @@ export default function ProductListing({
     const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
     return matchesSearch && matchesCategory && matchesPrice;
   });
+
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen bg-transparent p-4 md:p-8 font-sans max-w-[1000px] mx-auto">
+        {/* Page Title */}
+        <h1 className="text-[#0a3161] text-2xl md:text-3xl font-bold mb-6 tracking-tight">
+          Product Listing
+        </h1>
+        {/* Layout Grid Skeleton */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {Array.from({ length: 6 }).map((_, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-xl p-3 flex flex-col justify-between shadow-sm border border-gray-100 h-full animate-pulse"
+            >
+              <div>
+                {/* Image Placeholder */}
+                <div className="h-32 w-full bg-gray-200 rounded-lg mb-2.5"></div>
+                {/* Title Placeholder */}
+                <div className="h-3.5 bg-gray-200 rounded w-3/4 mb-2"></div>
+                {/* Rating Placeholder */}
+                <div className="h-2.5 bg-gray-200 rounded w-1/3 mb-2.5"></div>
+                {/* Price Placeholder */}
+                <div className="h-3.5 bg-gray-200 rounded w-1/4"></div>
+              </div>
+              {/* Button Placeholder */}
+              <div className="h-8 bg-gray-200 rounded-md mt-4"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-transparent p-4 md:p-8 font-sans max-w-[1000px] mx-auto">

@@ -78,7 +78,9 @@ const SidebarFilters = ({
                   </span>
 
                   {/* Category Text */}
-                  <span className="text-[13px] text-white font-medium">{cat}</span>
+                  <span className="text-[13px] text-white font-medium group-hover:translate-x-1 transition-transform duration-200">
+                    {cat}
+                  </span>
                 </label>
               );
             })}
