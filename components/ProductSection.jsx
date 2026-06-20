@@ -1,11 +1,13 @@
 import React from "react";
 import { products } from "../app/data/products";
 
-export default function ProductListing({ searchQuery = "" }) {
-  // Filter products by title (case-insensitive)
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+export default function ProductListing({ searchQuery = "", selectedCategories = [] }) {
+  // Filter products by title (case-insensitive) and selected categories
+  const filteredProducts = products.filter((product) => {
+    const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="min-h-screen bg-transparent p-4 md:p-8 font-sans max-w-[1000px] mx-auto">
@@ -18,10 +20,10 @@ export default function ProductListing({ searchQuery = "" }) {
       {filteredProducts.length === 0 ? (
         <div className="text-center py-16 bg-white rounded-xl shadow-sm border border-gray-100 p-8">
           <p className="text-gray-500 text-base md:text-lg font-medium">
-            No products found matching "{searchQuery}"
+            No products found matching the selected filters
           </p>
           <p className="text-gray-400 text-xs md:text-sm mt-1">
-            Try checking for spelling or searching for a different item.
+            Try checking for spelling, clearing search, or adjusting category filters.
           </p>
         </div>
       ) : (

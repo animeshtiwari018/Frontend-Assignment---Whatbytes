@@ -2,14 +2,20 @@
 
 import React, { useState } from "react";
 
-const SidebarFilters = () => {
-  const [category, setCategory] = useState("All");
-
+const SidebarFilters = ({ selectedCategories = [], setSelectedCategories }) => {
   // Minimum and Maximum price states
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
 
-  const categories = ["All", "Electronics", "Clothing", "Home"];
+  const categories = ["Electronics", "Clothing", "Home", "Footwear"];
+
+  const handleCategoryToggle = (cat) => {
+    if (selectedCategories.includes(cat)) {
+      setSelectedCategories(selectedCategories.filter((c) => c !== cat));
+    } else {
+      setSelectedCategories([...selectedCategories, cat]);
+    }
+  };
 
   const handleMinChange = (e) => {
     const value = Math.min(Number(e.target.value), maxPrice - 50);
@@ -35,33 +41,40 @@ const SidebarFilters = () => {
 
           <div className="flex flex-col gap-3">
             {categories.map((cat) => {
-              const isSelected = category === cat;
+              const isSelected = selectedCategories.includes(cat);
               return (
                 <label
                   key={cat}
-                  className="flex items-center cursor-pointer group"
+                  className="flex items-center cursor-pointer group select-none"
                 >
                   <input
-                    type="radio"
-                    name="category"
-                    value={cat}
+                    type="checkbox"
                     checked={isSelected}
-                    onChange={(e) => setCategory(e.target.value)}
+                    onChange={() => handleCategoryToggle(cat)}
                     className="sr-only"
                   />
 
-                  {/* image_cd0945.png के हिसाब से कस्टमाइज्ड वाइट रिंग स्टाइल */}
+                  {/* Custom Checkbox Square styling */}
                   <span
-                    className={`w-[15px] h-[15px] rounded-full mr-3 transition-all box-border
+                    className={`w-[15px] h-[15px] rounded mr-3 transition-all box-border flex items-center justify-center
                       ${
                         isSelected
-                          ? "border-2 border-white bg-[#0052a3] ring-1 ring-white ring-offset-[1.5px] ring-offset-[#0052a3] scale-100"
+                          ? "border-2 border-white bg-white text-[#0052a3] scale-100"
                           : "border-2 border-white/40 bg-transparent group-hover:border-white/60"
                       }`}
-                  />
+                  >
+                    {isSelected && (
+                      <svg
+                        className="w-2.5 h-2.5 fill-current"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                      </svg>
+                    )}
+                  </span>
 
                   {/* Category Text */}
-                  <span className="text-[13px] text-white">{cat}</span>
+                  <span className="text-[13px] text-white font-medium">{cat}</span>
                 </label>
               );
             })}
