@@ -27,7 +27,6 @@ export default function Header() {
         <button className="flex items-center gap-2 rounded-lg bg-[#002b5a] px-8 py-3 text-white">
 =======
         <button className="flex items-center gap-2 rounded-lg bg-[#002b5a] px-5 py-3 text-white">
->>>>>>> 459f4e0dcb9f894ef91cd9a9fa77922acb3fde07
           <ShoppingCart size={18} />
           Cart
         </button>
