@@ -55,7 +55,7 @@ npm run dev
 ```
 
 ### 4. View in browser
-Open [http://localhost:3000](http://localhost:3000) in your web browser to view the application.
+Open [https://frontend-assignment-whatbytes-two.vercel.app/]in your web browser to view the application.
 
 ### 5. Build for Production
 To generate a production-optimized build:
