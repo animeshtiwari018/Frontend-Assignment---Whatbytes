@@ -4,8 +4,8 @@ A modern, responsive, and highly interactive frontend e-commerce catalog built u
 
 ## 🔗 Project Links
 
-*   **GitHub Repository:** [https://github.com/animeshtiwari018/Frontend-Assignment---Whatbytes](https://github.com/animeshtiwari018/Frontend-Assignment---Whatbytes)
-*   **Live Deployment URL:** [https://frontend-assignment-whatbytes-animesh.vercel.app/](https://frontend-assignment-whatbytes-animesh.vercel.app/) *(If your Vercel deployment URL is different, feel free to update this link in the README)*
+*   **GitHub Repository:** https://github.com/animeshtiwari018/Frontend-Assignment---Whatbytes
+*   **Live Deployment URL:**https://frontend-assignment-whatbytes-two.vercel.app/
 
 ---
 
@@ -38,45 +38,27 @@ Follow these instructions to run the project locally on your machine:
 ### Prerequisites
 Make sure you have [Node.js](https://nodejs.org/) (v18.x or higher recommended) and `npm` installed.
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/animeshtiwari018/Frontend-Assignment---Whatbytes.git
-cd "Frontend-Assignment---Whatbytes"
-```
 
-### 2. Enter the Next.js app directory
+### 1. Enter the Next.js app directory
 ```bash
 cd frontend-assignment-whatbytes
 ```
 
-### 3. Install dependencies
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
-### 4. Run the development server
+### 3. Run the development server
 ```bash
 npm run dev
 ```
 
-### 5. View in browser
+### 4. View in browser
 Open [http://localhost:3000](http://localhost:3000) in your web browser to view the application.
 
-### 6. Build for Production
+### 5. Build for Production
 To generate a production-optimized build:
 ```bash
 npm run build
 npm start
-```
-
----
-
-## 🌐 Deploying to Vercel
-
-To deploy this project to Vercel:
-
-1.  Push the code to your GitHub repository.
-2.  Go to [Vercel](https://vercel.com/) and log in.
-3.  Click **New Project** and import the `Frontend-Assignment---Whatbytes` repository.
-4.  Specify `frontend-assignment-whatbytes` as the **Root Directory** in Vercel's build settings.
-5.  Click **Deploy**. Vercel will automatically configure the build commands and generate your live URL.
